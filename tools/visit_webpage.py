@@ -1,8 +1,5 @@
 from typing import Any, Optional
 from smolagents.tools import Tool
-import requests
-import markdownify
-import smolagents
 
 class VisitWebpageTool(Tool):
     name = "visit_webpage"
@@ -30,6 +27,7 @@ class VisitWebpageTool(Tool):
             markdown_content = markdownify(response.text).strip()
 
             # Remove multiple line breaks
+            import re
             markdown_content = re.sub(r"\n{3,}", "\n\n", markdown_content)
 
             return truncate_content(markdown_content, 10000)
