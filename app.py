@@ -43,9 +43,10 @@ def get_current_time_in_timezone(timezone: str) -> str:
 model = HfApiModel(
     max_tokens=2096,
     temperature=0.5,
-    model_id='Qwen/Qwen2.5-Coder-32B-Instruct',# it is possible that this model may be overloaded
+    # model_id='Qwen/Qwen2.5-Coder-32B-Instruct',# it is possible that this model may be overloaded
+    model_id='meta-llama/Llama-2-7b-chat-hf',
     custom_role_conversions=None,
-    provider="together"
+    # provider="fal-ai"
 )
 
 
